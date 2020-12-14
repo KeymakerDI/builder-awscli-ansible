@@ -17,7 +17,7 @@ lightweight operating system.
 ## Build
 
 ```
-docker build -t kristwaa/builder-aws-ansible .
+docker build -t builder-aws-ansible .
 ```
 
 ## Usage

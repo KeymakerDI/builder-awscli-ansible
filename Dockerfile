@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 # Inspired by mesosphere/aws-cli
 RUN apk --no-cache -v --update add \
         bash \
@@ -18,6 +18,7 @@ RUN apk --no-cache -v --update add \
     pip3 install --no-cache-dir --upgrade \
         pip \
         setuptools \
+        wheel \
       && \
     pip3 install --no-cache-dir --upgrade \
         awscli==1.16.2 \
@@ -32,7 +33,5 @@ RUN apk --no-cache -v --update add \
         libffi-dev \
         openssl-dev \
       && \
-    ln -s /usr/bin/python3 /usr/bin/python \
-      && \
-    rm /var/cache/apk/*
+    ln -s /usr/bin/python3 /usr/bin/python
 ENTRYPOINT ["/bin/bash"]
